@@ -1,0 +1,26 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "extensions": [
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "terminal.integrated.shellArgs.linux": [
+      "--login",
+      "-i"
+    ],
+    "typescript.tsdk": "/usr/local/share/.config/yarn/global/node_modules/typescript/lib"
+  },
+  "postCreateCommand": "pnpm install",
+  "runArgs": [
+    "--node-arg=--require=pnpm/cli.js",
+    "--node-arg=--require=ts-node/register"
+  ],
+  "build": {
+    "args": {
+      "VARIANT": "18"
+    }
+  }
+}
